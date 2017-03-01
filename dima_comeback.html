@@ -1,0 +1,447 @@
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<title></title>
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link type="text/css" rel="stylesheet" href="dima_comeback.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="./jquery.event.move.js"></script>
+		<script src="./jquery.event.swipe.js"></script>
+		<script src="./parallax.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div>
+					<a href="#" class="main_logo">Dima: Comeback \ Save the World</a>
+					<a href="#" class="mobile_menu"></a>
+					<span>
+						<a href="#">about</a>
+						<a href="#">terminator</a>
+						<a href="#">agenda</a>
+						<a href="#">wazzup</a>
+						<a href="#">location</a>
+					</span>
+				</div>
+			</nav>
+			<p class="date">Dima Comeback Countdown<strong></strong></p>
+			<p class="countdown" data-date-time="2017-03-06 10:00:00" data-time-zone-offset="-5"></p>
+			<script type="text/javascript">
+				;(function(){
+					var eventDateTimeRaw = document.querySelector('.countdown').getAttribute('data-date-time'),
+						countdownPlaceholder = document.querySelector('.countdown'),          
+						eventTimeOffset = +document.querySelector('.countdown').getAttribute('data-time-zone-offset'),
+						eventDateParts = eventDateTimeRaw.match(/(\d{4})-(\d{2})-(\d{2})\s(\d{2}):(\d{2}):(\d{2})/),
+						now = new Date(),
+						eventDateTime = new Date();
+					eventDateTime.setYear(+eventDateParts[1]);
+					eventDateTime.setMonth(eventDateParts[2] - 1);
+					eventDateTime.setDate(+eventDateParts[3]);
+					eventDateTime.setHours(+eventDateParts[4] - ((eventDateTime.getTimezoneOffset() / 60) + eventTimeOffset));
+					eventDateTime.setMinutes(+eventDateParts[5]);
+					eventDateTime.setSeconds(+eventDateParts[6]);
+
+					var dDif = Math.max(Math.floor((eventDateTime - now) / (1000 * 60 * 60 * 24)), 0),
+						hDif = Math.max(Math.floor((eventDateTime - now) / (1000 * 60 * 60) - 24 * dDif), 0),
+						mDif = Math.max(Math.floor((eventDateTime - now) / (1000 * 60) - 60 * hDif - 60 * 24 * dDif), 0),
+						sDif = Math.max(Math.floor((eventDateTime - now) / (1000) - 60 * mDif - 60 * 60 * hDif - 60 * 60 * 24 * dDif), 0);
+
+
+					function addLeadZero(number){
+						return (number < 10 ? '0' : '') + number;
+					}
+					countdownPlaceholder.innerHTML = "<span class='countdown_item countdown_days'>" + dDif + "</span><span class='countdown_item countdown_hours'>" + addLeadZero(hDif) + "</span><span class='countdown_item countdown_minutes'>" + addLeadZero(mDif) + "</span><span class='countdown_item countdown_seconds'>" + addLeadZero(sDif);
+					setTimeout(arguments.callee, 1e3);
+				})();
+			</script>
+			<script type="text/javascript">
+				$(window).scroll(function(){
+					if($(window).scrollTop() > 55 && !$('header').hasClass('scroll')){
+						$('header').addClass('scroll');
+					}else if($(window).scrollTop() < 55){
+						$('header').removeClass('scroll');
+					}
+				});
+			</script>
+		</header>
+		<main>
+			<section class="clients">
+				<p>
+					<img src="./images/footer_logo.png" alt=""/>
+					<img src="./images/footer_logo.png" alt=""/>
+					<img src="./images/footer_logo.png" alt=""/>
+				</p>
+			</section>
+			<section class="about" style="text-align: center;">
+				<img src="./images/Sprites/About_2x.png" width="58" height="58" alt=""/>
+				<h2><strong>simply about</strong> Dima</h2>
+				<div>
+					<figure>
+						<img src="./images/bill.jpg" width="175" height="175"/>
+					</figure>
+				<div>
+			</div></div>
+				<!-- <a href="#" class="cta">register</a> -->
+			</section>
+			<section class="speakers">
+				<img src="./images/Sprites/Speakers_2x.png" width="58" height="58" alt=""/>
+				<h2><strong>our</strong> best and only</h2>
+				<article>
+					<p>Dima is the only one.</p>
+					<p>No one is like Dima.</p>
+				</article>
+				<div>
+					<figure>
+						<img src="./images/people/Terminator-6.jpg" alt="Mark Simpson" width="175" height="175"/>
+						<figcaption><strong>Guru</strong> John Smith</figcaption>
+						<span>Director of everything, <strong> Big Brother, Inc.</strong></span>
+					</figure>
+				<div>
+			</section>
+			<section class="agenda">
+				<img src="./images/Sprites/Agenda_2x.png" width="58" height="58" alt=""/>
+				<h2><strong>the</strong> agenda</h2>
+				<article>
+					<p>Waiting for Dima.</p>
+					<p>Asking when Dima comes back.</p>
+					<p>Looking forward to Dima comeback.</p>
+				</article>
+				<ul>
+					<li>
+						<span><strong>10:00</strong>am</span>
+						<div>
+							<h3>Daily Standup</h3>
+							<p>Preparing for Dima Comeback</p>
+							<b>Are we prepared?!</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>10:30</strong>am</span>
+						<div>
+							<h3>Handling Daily Tasks Without Dima</h3>
+							<p>Who can help us?</p>
+							<b>Checking the time-table for Dima's return</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>11:00</strong>am</span>
+						<div>
+							<h3>Is Dima coming back, finally?</h3>
+							<p>What is the Weather like today?</p></p>
+							<b>What will be the weather like when Dima comes back?</b></b>
+						</div>
+					</li>
+					<li>
+						<span><strong>11:30</strong>am</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>12:30</strong>pm</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>12:45</strong>pm</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>2:00</strong>pm</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>4:00</strong>pm</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+					<li>
+						<span><strong>6:00</strong>pm</span>
+						<div>
+							<h3>Who is trying to do Dima's tasks?</h3>
+							<p>What can be done without?</p>
+							<b>Checking the time-table again</b>
+						</div>
+					</li>
+				</ul>
+				<script type="text/javascript">
+					$('.agenda li').click(function(){
+						$(this).toggleClass('expanded');
+						$(this).find('div p').slideToggle();
+					});
+				</script>
+			</section>
+			<section class="slider">
+				<img src="./images/Sprites/Talking_2x.png" width="58" height="58" alt=""/>
+				<h2><strong>Why</strong> Dima?</h2>
+				<div>
+					<ul>
+						<li><p>"Dima is the only one."</p></li>
+						<li><p>"Dima is like Neo."</p></li>
+						<li><p>"Neo, wake up!"</p></li>
+						<li><p>"If you do not know about Dima, please ask."</p></li>
+					</ul>	
+				</div>	
+				<script type="text/javascript">
+					;(function(){
+						var sliderContainer = $('.slider ul'),
+							inprogress = false;
+
+						sliderContainer.parent().after($('<ol>' + Array(sliderContainer.find('li').length + 1).join('<li></li>') + '</ol>'));
+						sliderContainer.width(sliderContainer.find('li').length * 100 + '%');
+						sliderContainer.css({
+							'margin-left': sliderContainer.parent().width() / 2 - sliderContainer.find('li').width() / 2,
+							'visibility': 'visible'
+						});
+						$(window).resize(function(){
+							sliderContainer.css({
+								'margin-left': sliderContainer.parent().width() / 2 - sliderContainer.find('li').width() / 2,
+								'visibility': 'visible',
+								'left': -1 * $('ol li.active').index() * sliderContainer.find('li').width()
+							});
+						});
+						$('.slider ul li:eq(0)').css('opacity', 1);
+						$('.slider ol li:eq(0)').addClass('active');
+						$('.slider div')
+							.on('swipeleft', function(e){	
+								$('.slider ol li.active').next().click();
+							})
+							.on('swiperight', function(e){	
+								$('.slider ol li.active').prev().click();
+							}).on('movestart', function(e) {
+								// If the movestart is heading off in an upwards or downwards
+								// direction, prevent it so that the browser scrolls normally.
+								if ((e.distX > e.distY && e.distX < -e.distY) ||
+									(e.distX < e.distY && e.distX > -e.distY)) {
+									e.preventDefault();
+								}
+							});	
+						$('.slider').on('click', 'ol li:not(.active)', function(){
+							if(inprogress) return;
+							inprogress = true;
+							var self = $(this),
+								activeIndex = $('ol li.active').index(),
+								index = self.index(),
+								left = parseInt(sliderContainer.css('left'));
+
+							$('ol li.active').removeClass('active');
+							self.addClass('active');
+
+							sliderContainer.find('li').eq(index).animate({
+								'opacity': 1
+							});
+
+							sliderContainer.find('li').eq(activeIndex).animate({
+								'opacity': 0
+							});
+
+							sliderContainer.animate({
+								'left': left + (activeIndex - index) * sliderContainer.find('li').width()
+							}, function(){ inprogress = false; });							
+						});
+					})();
+				</script>
+			</section>
+			<section class="location">
+				<img src="./images/Sprites/Place_2x.png" width="58" height="58" alt=""/>
+				<h2><strong>the</strong> place</h2>
+				<article style="height : 1000px;">
+				</article>
+				<a href="#" class="cta">get directions</a>
+			</section>
+			<section class="map" id="map">
+				<script type="text/javascript">
+					;(function(){
+						var mapCenter = [48.448097, 35.0172693],
+							eventPlace = [48.448097, 35.0172693];
+
+						var mapCanvas = $('#map')[0],
+							mapOptions = {
+								center: new google.maps.LatLng(mapCenter[0], mapCenter[1]),
+								zoom: 13,
+								streetViewControl: false,
+								scrollwheel: false,
+								mapTypeId: google.maps.MapTypeId.ROADMAP,
+								styles: [
+										    {
+										        "featureType": "administrative",
+										        "elementType": "all",
+										        "stylers": [
+										            {
+										                "visibility": "on"
+										            },
+										            {
+										                "lightness": 33
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "landscape",
+										        "elementType": "all",
+										        "stylers": [
+										            {
+										                "color": "#f2e5d4"
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "poi.park",
+										        "elementType": "geometry",
+										        "stylers": [
+										            {
+										                "color": "#c5dac6"
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "poi.park",
+										        "elementType": "labels",
+										        "stylers": [
+										            {
+										                "visibility": "on"
+										            },
+										            {
+										                "lightness": 20
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "road",
+										        "elementType": "all",
+										        "stylers": [
+										            {
+										                "lightness": 20
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "road.highway",
+										        "elementType": "geometry",
+										        "stylers": [
+										            {
+										                "color": "#c5c6c6"
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "road.arterial",
+										        "elementType": "geometry",
+										        "stylers": [
+										            {
+										                "color": "#e4d7c6"
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "road.local",
+										        "elementType": "geometry",
+										        "stylers": [
+										            {
+										                "color": "#fbfaf7"
+										            }
+										        ]
+										    },
+										    {
+										        "featureType": "water",
+										        "elementType": "all",
+										        "stylers": [
+										            {
+										                "visibility": "on"
+										            },
+										            {
+										                "color": "#acbcc9"
+										            }
+										        ]
+										    }
+										]
+							},
+							map = new google.maps.Map(mapCanvas, mapOptions),
+							marker = new google.maps.Marker({
+								position: new google.maps.LatLng(eventPlace[0], eventPlace[1]),
+								map: map,
+								icon: './images/Sprites/marker.png'
+							});
+							$(window).resize(function(){
+								map.setCenter(new google.maps.LatLng(mapCenter[0], mapCenter[1]));
+  							});
+							if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+								map.setOptions({draggable: false});
+							}
+					})();
+				</script>
+			</section>
+			<section class="social">
+				<h2><strong>stay</strong> connected</h2>
+				<article>
+					<p>#Dima_Comebacl17, Kirova Ave</p>
+					<p>
+						<a href="#"><img src="./images/Sprites/Social Media/FaceBook_2x.png" width="33" height="32"></a>
+						<a href="#"><img src="./images/Sprites/Social Media/Twitter_2x.png" width="33" height="32"></a>
+						<a href="#"><img src="./images/Sprites/Social Media/LinkedIn_2x.png" width="33" height="32"></a>
+						<a href="#"><img src="./images/Sprites/Social Media/Google_2x.png" width="33" height="32"></a>
+						<a href="#"><img src="./images/Sprites/Social Media/Slideshare_2x.png" width="33" height="32"></a>
+						<a href="#"><img src="./images/Sprites/Social Media/Youtube_2x.png" width="33" height="32"></a>
+					</p>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<p>&copy; 2017 Dima Comeback | Guru John Smith</p>
+		</footer>
+		<script type="text/javascript">
+			/* disable parallax scrolling for mobile devices */
+			if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				/* parallax */ 
+				$('section.reserve, section.location').parallax({ speed: 0.3 });
+			}else{
+				$('section.reserve, section.location').css({ "background-position": "center center" });
+			}
+	
+			
+			/* main menu navigation */
+			$('nav span a').click(function(){
+				var index = $(this).index();
+				$('html, body').animate({
+    				scrollTop: $("h2").eq(index).offset().top - 160
+				});
+				$('header.expanded').removeClass('expanded');
+				return false;
+			});
+
+			
+			/* about section's cta */
+			$('section.about .cta').click(function(){
+				$('html, body').animate({
+    				scrollTop: $("h2:contains('reserve')").offset().top - 160
+				});
+				return false;
+			});
+
+			
+			/* hamburger */
+			$('.mobile_menu').click(function(){
+				$(this).parents().filter('header').toggleClass('expanded');
+				return false;
+			});
+		</script>
+	</body>
+</html>	
